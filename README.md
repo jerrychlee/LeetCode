@@ -1,4 +1,4 @@
 # LeetCode
 LeetCode
 
-This repository is my solution in LeetCode.
+This repository is my LeetCode solution in Java.
