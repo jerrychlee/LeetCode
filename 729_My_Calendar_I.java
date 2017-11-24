@@ -1,24 +1,22 @@
 class MyCalendar {
     
-    List<Pair<Integer,Integer>> event = null;
+    List<Pair<Integer,Integer>> events = null;
     
     public MyCalendar() {
-        event = new ArrayList<Pair<Integer,Integer>>();
+        events = new ArrayList<Pair<Integer,Integer>>();
     }
     
     public boolean book(int start, int end) {
         boolean isFree = true;
-        for(int i=0; i<event.size(); i++){
-            Pair p = event.get(i);
-            if((start>=(int)p.getLeft() && start<(int)p.getRight()) || (end>(int)p.getLeft() && end<=(int)p.getRight())
-               ||(start<=(int)p.getLeft() && end>=(int)p.getRight())){
+        for(Pair p:events){
+            if(start<(int)p.getRight() && end>(int)p.getLeft()){
                 isFree = false;
                 break;
             }
         }
         
         if(isFree==true){
-            event.add(new Pair(start,end));
+            events.add(new Pair(start,end));
         }
         
         return isFree;
@@ -51,6 +49,7 @@ class MyCalendar {
     }
     
 }
+
 
 /**
  * Your MyCalendar object will be instantiated and called as such:
