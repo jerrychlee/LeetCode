@@ -1,3 +1,6 @@
+/****************************************************/
+/* Version 1 - More efficent                        */
+/****************************************************/
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -7,6 +10,42 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        
+        if(root==null)
+            return true;
+        
+        return (treeHeight(root )!=-1) ? true:false;
+        
+    }
+    
+    static int treeHeight(TreeNode root){
+        
+        if(root==null)
+            return 0;
+        
+        int l = treeHeight(root.left);
+        
+        if(l==-1)
+            return -1;
+        
+        int r = treeHeight(root.right);
+        
+        if(r==-1)
+            return -1;
+        
+        if(Math.abs(l-r)>1)
+            return -1;
+        
+        return Math.max(l,r)+1;
+        
+    }
+}
+
+/****************************************************/
+/* Version 2                                        */
+/****************************************************/
 class Solution {
     public boolean isBalanced(TreeNode root) {
         
