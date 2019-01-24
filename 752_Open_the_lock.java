@@ -11,7 +11,6 @@ class Solution {
         int steps = 0;
         queue.add("0000");
         visited.add("0000");
-
         
         while(!queue.isEmpty()){
             int size = queue.size();            
@@ -27,10 +26,10 @@ class Solution {
                     char[] c_arr = cur.toCharArray();
                     c_arr[i] = (char)((c_arr[i]-'0'+1 + 10)%10 + '0');                                    
                     String nextString = String.valueOf(c_arr);
-                    if(!visited.contains(nextString) && !deadSet.contains(nextString)){                                           queue.add(nextString);
+                    if(!visited.contains(nextString) && !deadSet.contains(nextString)){                                           
+                        queue.add(nextString);
                         visited.add(nextString);
                     }
-
                     // case -1
                     c_arr = cur.toCharArray();
                     c_arr[i] = (char)((c_arr[i]-'0'-1 + 10)%10 + '0');                                    
