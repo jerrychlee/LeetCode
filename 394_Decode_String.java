@@ -23,13 +23,13 @@ class Solution {
                         out.delete( 0, out.length() );
                         break;
                     case ']':
-                        StringBuilder temp2 = new StringBuilder();
+                        StringBuilder temp = new StringBuilder();
                         int repeatTimes = num.pollLast();
-                        temp2.append(remain.pollLast());
+                        temp.append(remain.pollLast());
                         for(int c=0 ; c<repeatTimes; c++){
-                           temp2.append(out.toString()); 
+                           temp.append(out.toString()); 
                         }
-                        out = temp2;
+                        out = temp;
                         break;
                     default:
                         break;
