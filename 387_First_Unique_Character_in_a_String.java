@@ -12,6 +12,7 @@ return 2.
 Note: You may assume the string contain only lowercase letters.
 
 ===============================================================
+
 class Solution1 {    
     public int firstUniqChar(String s) {
         int [] array = new int[26];
@@ -28,6 +29,7 @@ class Solution1 {
 }
 
 ===============================================================
+
 class Solution2 {
     public int firstUniqChar(String s) {
         Map<Character, Integer> map = new HashMap<>();
@@ -53,3 +55,24 @@ class Solution2 {
         return out;
     }
 }
+
+===============================================================
+
+class Solution3 {
+    public int firstUniqChar(String s) {
+        Map<Character, Integer> map = new LinkedHashMap<>();
+        Set<Character> set = new HashSet<>();
+        for(int i=0; i<s.length(); i++){
+            Character c = s.charAt(i);
+            if(set.contains(c)){
+                map.remove(c);
+            }else{
+                map.put(c, i);
+                set.add(c);
+            }
+        }
+        
+        return map.size() == 0 ? -1 : map.entrySet().iterator().next().getValue();
+    }
+}
+
