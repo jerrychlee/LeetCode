@@ -1,13 +1,5 @@
 36. Valid Sudoku
-Medium
 
-737
-
-264
-
-Favorite
-
-Share
 Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
 Each row must contain the digits 1-9 without repetition.
@@ -88,7 +80,7 @@ class Solution {
                     for(int i=0; i<3; i++){
                         if(board[m*3+i][n*3+j]!='.')
                             if(!set.add(board[m*3+i][n*3+j])){
-                                System.out.println("m =" + m + " n =" + n + " i =" + i + " j =" + j);
+                                //System.out.println("m =" + m + " n =" + n + " i =" + i + " j =" + j);
                                 return false;
                             }
                     }
