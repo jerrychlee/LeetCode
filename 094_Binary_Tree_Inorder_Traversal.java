@@ -41,3 +41,35 @@ class Solution {
         return orderList;        
     }
 }
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    List<Integer> orderList = new ArrayList();
+    public List<Integer> inorderTraversal(TreeNode root) {
+
+        Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+        if(root == null){
+            return orderList;
+        }
+        
+        while (root!=null || stack.size()!=0) {
+            if(root != null){
+                stack.addFirst(root);
+                root = root.left;
+            }else{
+                root = stack.removeFirst();
+                orderList.add(root.val);
+                root = root.right;
+            }
+        }
+        return orderList;        
+    }
+}
