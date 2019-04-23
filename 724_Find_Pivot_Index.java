@@ -18,3 +18,33 @@ class Solution {
         return -1;
     }
 }
+
+
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int left = 0;
+        int right = 0;
+        
+        if(nums.length==0)
+            return -1;
+        
+        if(nums.length==1)
+            return 0;
+        
+        for(int num:nums ){
+            right+=num;
+        }
+        
+        for(int i=0; i<nums.length; i++){
+            if(i!=0){
+                left+=nums[i-1];            
+            }
+            right-=nums[i];
+            
+            if(left == right)
+                return i;
+        }
+        
+        return -1;
+    }
+}
