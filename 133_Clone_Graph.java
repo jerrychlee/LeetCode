@@ -3,7 +3,7 @@ Each node in the graph contains a label (int) and a list (List[UndirectedGraphNo
 There is an edge between the given node and each of the nodes in its neighbors.
 
 
-OJ's undirected graph serialization (so you can understand error output):
+OJ undirected graph serialization (so you can understand error output):
 Nodes are labeled uniquely.
 
 We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
